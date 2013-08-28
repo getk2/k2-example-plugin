@@ -24,4 +24,4 @@ K2 plugins are installed inside the "/plugins/K2/" folder in your Joomla! site.
 
 
 ## LEARN MORE
-Visit the Example K2 Plugin product page at: http://getk2.org/extend/extensions/90-example-k2-plugin-for-developers
+Visit the Example K2 Plugin product page at: http://getk2.org/redir/example
