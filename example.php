@@ -2,7 +2,7 @@
 /**
  * @version		2.2
  * @package		Example K2 Plugin (K2 plugin)
- * @author    	JoomlaWorks - http://www.joomlaworks.gr
+ * @author		JoomlaWorks - http://www.joomlaworks.net
  * @copyright	Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
