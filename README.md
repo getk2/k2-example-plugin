@@ -24,7 +24,7 @@ K2 plugins are installed inside the "/plugins/K2/" folder in your Joomla! site.
 ## DOWNLOAD
 All releases are published here: https://github.com/joomlaworks/example-k2-plugin/releases
 
-For Joomla! 1.5 use version 2.1.
+For Joomla! 1.5 use version 2.1.<br />
 For Joomla! 2.5 or newer user version 2.2.
 
 
