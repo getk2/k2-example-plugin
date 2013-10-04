@@ -20,7 +20,12 @@ The plugin can be installed using Joomla! extension installer.
 
 K2 plugins are installed inside the "/plugins/K2/" folder in your Joomla! site.
 
-*v2.1 of the plugin is compatible with Joomla! 1.5 to 2.5. An update for Joomla! 3.x is coming soon.*
+
+## DOWNLOAD
+All releases are published here: https://github.com/joomlaworks/example-k2-plugin/releases
+
+For Joomla! 1.5 use version 2.1.
+For Joomla! 2.5 or newer user version 2.2.
 
 
 ## LEARN MORE
