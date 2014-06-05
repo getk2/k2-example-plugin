@@ -56,3 +56,5 @@ If you want to provide feedback for this Joomla plugin, you may use the GitHub i
 You can grab the latest release here: http://goo.gl/WQpl1I (v2.2)
 
 To install this Joomla plugin, download the file in your computer and then head over to the Joomla installer and choose to upload the file you just downloaded.
+
+An older release for Joomla 1.5 can be found here: https://github.com/joomlaworks/example-k2-plugin/releases/download/v2.1/plg_k2_example-v2.1_j1.5-1.7.zip
