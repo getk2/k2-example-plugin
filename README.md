@@ -29,7 +29,7 @@ Use it to learn the K2 plugin API and build Joomla extensions that interface wit
 
 
 ### DEMO & SHOWCASE
-There is no demo or showcase available for this extension. But all the extensions referenced here http://getk2.org/show/tag/built%20by%20joomlaworks have been developed from this plugin.
+There is no demo or showcase available for this extension. But all the K2 extensions referenced here http://getk2.org/show/tag/built%20by%20joomlaworks have been developed from this plugin.
 
 
 ### REQUIREMENTS
@@ -49,7 +49,7 @@ Some helpful links:
 - K2 - http://getk2.org
 - Joomla - http://www.joomla.org
 
-If you want to provide feedback for this Joomla plugin, you may use the GitHub issue tracker here: https://github.com/joomlaworks/example-k2-plugin/issues
+If you want to provide feedback for this Joomla plugin, you may use the GitHub issue tracker here: https://github.com/getk2/k2-example-plugin/issues
 
 
 ## DOWNLOAD
@@ -57,4 +57,4 @@ You can grab the latest release here: http://goo.gl/WQpl1I (v2.2)
 
 To install this Joomla plugin, download the file in your computer and then head over to the Joomla installer and choose to upload the file you just downloaded.
 
-An older release for Joomla 1.5 can be found here: https://github.com/joomlaworks/example-k2-plugin/releases/download/v2.1/plg_k2_example-v2.1_j1.5-1.7.zip
+An older release for Joomla 1.5 can be found here: https://github.com/getk2/k2-example-plugin/releases/download/v2.1/plg_k2_example-v2.1_j1.5-1.7.zip
