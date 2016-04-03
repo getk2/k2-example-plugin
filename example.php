@@ -25,9 +25,10 @@ class plgK2Example extends K2Plugin
 	var $pluginName = 'example';
 	var $pluginNameHumanReadable = 'Example K2 Plugin';
 
-	function plgK2Example(&$subject, $params)
+	function __construct(&$subject, $params)
 	{
 		parent::__construct($subject, $params);
+
 	}
 
 	/**
