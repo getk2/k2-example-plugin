@@ -35,7 +35,7 @@ There is no demo or showcase available for this extension. But all the K2 extens
 ### REQUIREMENTS
 This is a K2 plugin for Joomla and the only basic requirements to use it are:
 
-- K2 v2.5.x or newer installed
+- K2 v2.6.x or newer installed
 - Joomla 2.5 or 3.x installed
 
 
@@ -46,14 +46,14 @@ This is a Joomla extension developed by JoomlaWorks and released under the GNU/G
 ### ADDITIONAL INFO
 Some helpful links:
 
-- K2 - http://getk2.org
-- Joomla - http://www.joomla.org
+- K2 - https://getk2.org
+- Joomla - https://www.joomla.org
 
 If you want to provide feedback for this Joomla plugin, you may use the GitHub issue tracker here: https://github.com/getk2/k2-example-plugin/issues
 
 
 ## DOWNLOAD
-You can grab the latest release here: http://goo.gl/WQpl1I (v2.2)
+You can grab the latest release here: https://github.com/getk2/k2-example-plugin/archive/master.zip
 
 To install this Joomla plugin, download the file in your computer and then head over to the Joomla installer and choose to upload the file you just downloaded.
 
