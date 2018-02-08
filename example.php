@@ -20,72 +20,71 @@ JLoader::register('K2Plugin', JPATH_ADMINISTRATOR.'/components/com_k2/lib/k2plug
 // Initiate class to hold plugin events
 class plgK2Example extends K2Plugin
 {
+    // Some params
+    public $pluginName = 'example';
+    public $pluginNameHumanReadable = 'Example K2 Plugin';
 
-	// Some params
-	var $pluginName = 'example';
-	var $pluginNameHumanReadable = 'Example K2 Plugin';
+    public function __construct(&$subject, $params)
+    {
+        parent::__construct($subject, $params);
+    }
 
-	function __construct(&$subject, $params)
-	{
-		parent::__construct($subject, $params);
+    /**
+     * Below we list all available FRONTEND events, to trigger K2 plugins.
+     * Watch the different prefix "onK2" instead of just "on" as used in Joomla! already.
+     * Most functions are empty to showcase what is available to trigger and output. A few are used to actually output some code for example reasons.
+     */
 
-	}
+    public function onK2PrepareContent(&$item, &$params, $limitstart)
+    {
+        $mainframe = JFactory::getApplication();
+        //$item->text = 'It works! '.$item->text;
+    }
 
-	/**
-	 * Below we list all available FRONTEND events, to trigger K2 plugins.
-	 * Watch the different prefix "onK2" instead of just "on" as used in Joomla! already.
-	 * Most functions are empty to showcase what is available to trigger and output. A few are used to actually output some code for example reasons.
-	 */
+    public function onK2AfterDisplay(&$item, &$params, $limitstart)
+    {
+        $mainframe = JFactory::getApplication();
+        return '';
+    }
 
-	function onK2PrepareContent(&$item, &$params, $limitstart)
-	{
-		$mainframe = JFactory::getApplication();
-		//$item->text = 'It works! '.$item->text;
-	}
+    public function onK2BeforeDisplay(&$item, &$params, $limitstart)
+    {
+        $mainframe = JFactory::getApplication();
+        return '';
+    }
 
-	function onK2AfterDisplay(&$item, &$params, $limitstart)
-	{
-		$mainframe = JFactory::getApplication();
-		return '';
-	}
+    public function onK2AfterDisplayTitle(&$item, &$params, $limitstart)
+    {
+        $mainframe = JFactory::getApplication();
+        return '';
+    }
 
-	function onK2BeforeDisplay(&$item, &$params, $limitstart)
-	{
-		$mainframe = JFactory::getApplication();
-		return '';
-	}
+    public function onK2BeforeDisplayContent(&$item, &$params, $limitstart)
+    {
+        $mainframe = JFactory::getApplication();
+        return '';
+    }
 
-	function onK2AfterDisplayTitle(&$item, &$params, $limitstart)
-	{
-		$mainframe = JFactory::getApplication();
-		return '';
-	}
+    // Event to display (in the frontend) the YouTube URL as entered in the item form
+    public function onK2AfterDisplayContent(&$item, &$params, $limitstart)
+    {
+        $mainframe = JFactory::getApplication();
 
-	function onK2BeforeDisplayContent(&$item, &$params, $limitstart)
-	{
-		$mainframe = JFactory::getApplication();
-		return '';
-	}
+        // Get the output of the K2 plugin fields (the data entered by your site maintainers)
+        $plugins = new K2Parameter($item->plugins, '', $this->pluginName);
 
-	// Event to display (in the frontend) the YouTube URL as entered in the item form
-	function onK2AfterDisplayContent(&$item, &$params, $limitstart)
-	{
-		$mainframe = JFactory::getApplication();
+        $videoURL = $plugins->get('videoURL_item');
 
-		// Get the output of the K2 plugin fields (the data entered by your site maintainers)
-		$plugins = new K2Parameter($item->plugins, '', $this->pluginName);
+        // Check if we have a value entered
+        if (empty($videoURL)) {
+            return;
+        }
 
-		$videoURL = $plugins->get('videoURL_item');
+        // Output
+        preg_match('/youtube\.com\/watch\?v=([a-z0-9-_]+)/i', $videoURL, $matches);
+        $video_id = $matches[1];
 
-		// Check if we have a value entered
-		if (empty($videoURL))
-			return;
-
-		// Output
-		preg_match('/youtube\.com\/watch\?v=([a-z0-9-_]+)/i', $videoURL, $matches);
-		$video_id = $matches[1];
-
-		$output = '
+        $output = '
 		<p>'.JText::_('Video rendered using the "Example K2 Plugin".').'</p>
 		<object width="'.$this->params->get('width').'" height="'.$this->params->get('height').'">
 			<param name="movie" value="http://www.youtube.com/v/'.$video_id.'&hl=en&fs=1"></param>
@@ -95,33 +94,39 @@ class plgK2Example extends K2Plugin
 		</object>
 		';
 
-		return $output;
-	}
+        return $output;
+    }
 
-	// Event to display (in the frontend) the YouTube URL as entered in the category form
-	function onK2CategoryDisplay(&$category, &$params, $limitstart)
-	{
-		$mainframe = JFactory::getApplication();
+    // Event to display (in the frontend) the YouTube URL as entered in the category form
+    public function onK2CategoryDisplay(&$category, &$params, $limitstart)
+    {
+        $mainframe = JFactory::getApplication();
 
-		// Get the output of the K2 plugin fields (the data entered by your site maintainers)
-		$plugins = new K2Parameter($category->plugins, '', $this->pluginName);
+        // Get the output of the K2 plugin fields (the data entered by your site maintainers)
+        $plugins = new K2Parameter($category->plugins, '', $this->pluginName);
 
-		$output = $plugins->get('videoURL_cat');
+        $output = $plugins->get('videoURL_cat');
 
-		return $output;
-	}
+        return $output;
+    }
 
-	// Event to display (in the frontend) the YouTube URL as entered in the user form
-	function onK2UserDisplay(&$user, &$params, $limitstart)
-	{
-		$mainframe = JFactory::getApplication();
+    // Event to display (in the frontend) the YouTube URL as entered in the user form
+    public function onK2UserDisplay(&$user, &$params, $limitstart)
+    {
+        $mainframe = JFactory::getApplication();
 
-		// Get the output of the K2 plugin fields (the data entered by your site maintainers)
-		$plugins = new K2Parameter($user->plugins, '', $this->pluginName);
+        // Get the output of the K2 plugin fields (the data entered by your site maintainers)
+        $plugins = new K2Parameter($user->plugins, '', $this->pluginName);
 
-		$output = $plugins->get('videoURL_user');
+        $output = $plugins->get('videoURL_user');
 
-		return $output;
-	}
-
+        return $output;
+    }
+    
+    // Event to replace default commenting system
+    public function K2CommentsBlock(&$item, &$params, $limitstart)
+    {
+        $mainframe = JFactory::getApplication();
+        return '';
+    }
 } // END CLASS
